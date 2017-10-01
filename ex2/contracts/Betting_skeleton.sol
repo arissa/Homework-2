@@ -1,12 +1,12 @@
 pragma solidity ^0.4.15;
 
-contract BettingContract {
+contract Betting {
 	/* Standard state variables */
-	address owner;
+	address public owner;
 	address public gamblerA;
 	address public gamblerB;
 	address public oracle;
-	uint[] outcomes;
+	uint[] outcomes;	// Feel free to replace with a mapping
 
 	/* Structs are custom data structures with self-defined parameters */
 	struct Bet {
@@ -81,7 +81,7 @@ contract BettingContract {
 	}
 
 	/* Fallback function */
-	function() {
+	function() payable {
 		revert();
 	}
 }
